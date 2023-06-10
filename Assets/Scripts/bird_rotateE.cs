@@ -37,6 +37,7 @@ public class bird_rotateE : MonoBehaviour
 
     }
 
+    // Bewegungsvektor berechnen
     private void FixedUpdate()
     {
         if (transform.position != previousPosition)
