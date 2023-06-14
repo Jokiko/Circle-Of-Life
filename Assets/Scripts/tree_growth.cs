@@ -23,7 +23,7 @@ public class tree_growth : MonoBehaviour
         if (transform.localScale.y >= maxSize)
         {
             lifeTime = lifeTime -1;
-            if(lifeTime == 0){
+            if(lifeTime <= 0){
                 //gameObject.SetActive(false);
                 Destroy(gameObject);
             }

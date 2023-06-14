@@ -34,10 +34,12 @@ public class bird_unterwegs : MonoBehaviour
     void Update()
     {
         if (currentTree == null){
-            currentTree = globelVarManeger.treeQueue.Dequeue();
-            currentTreePosition = globelVarManeger.positionsTrees.Dequeue();
-            Debug.Log(currentTree);
-            Debug.Log("Aktuelle Position: "+currentTreePosition);
+            if(globelVarManeger.treeQueue.Count > 0 && globelVarManeger.positionsTrees.Count > 0){
+                currentTree = globelVarManeger.treeQueue.Dequeue();
+                currentTreePosition = globelVarManeger.positionsTrees.Dequeue();
+            }
+            //Debug.Log(currentTree);
+            //Debug.Log("Aktuelle Position: "+currentTreePosition);
             aufDemWegZuBaum = true;
         }
         //Aufgrund von zufaelliger Lebenszeit kann ausgewaehlter Baum trotzdem schon geloescht sein
@@ -49,7 +51,7 @@ public class bird_unterwegs : MonoBehaviour
                 // Check, ob Entfernung zum Baum groesser als Schwelle ist 
                 if (direction.magnitude > (distanceThreshold +2))
                 {
-                    Debug.Log(direction.magnitude);
+                    //Debug.Log(direction.magnitude);
                     // Berechne die neue Position des Vogels auf dem Weg zum Baum
                     Vector3 newPosition = Vector3.Lerp(transform.position, currentTreePosition - direction.normalized * distanceThreshold, Time.deltaTime * speed);
 
