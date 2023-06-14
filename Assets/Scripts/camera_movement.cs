@@ -17,7 +17,7 @@ public class camera_movement : MonoBehaviour
     private float height = 2f;  // 
     private Vector3 thirdPersonOffset;
 
-    private float birdsEyeHeight = 40f;
+    private float birdsEyeHeight = 10f;
 
     // Start is called before the first frame update
     void Start()
@@ -71,7 +71,7 @@ public class camera_movement : MonoBehaviour
             //Bird's Eye View    
             case 2:
                 //put camera in the sky
-                Vector3 cameraPosition = transform.position;
+                Vector3 cameraPosition = target.position;
                 cameraPosition.y = birdsEyeHeight;
                 transform.position = cameraPosition;
 

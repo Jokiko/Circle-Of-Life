@@ -23,12 +23,13 @@ public class tree_spawn : MonoBehaviour
                 Vector2 randomPosition = Random.insideUnitCircle.normalized * Random.Range(minSpawnRadius, maxSpawnRadius);
                 Vector3 spawnPosition = new Vector3(randomPosition.x, 0.0f, randomPosition.y);
                 globelVarManeger.positionsTrees.Enqueue(spawnPosition);
-                Debug.Log("vektor3  :" + spawnPosition);
+                //Debug.Log("vektor3  :" + spawnPosition);
 
                 //create tree, scale it for visibility and add tree_growth script to it
                 GameObject new_tree = Instantiate(oak_tree, spawnPosition, Quaternion.identity);
                 new_tree.transform.localScale = new Vector3(1f,1f,1f);
                 new_tree.AddComponent<tree_growth>();
+                globelVarManeger.treeQueue.Enqueue(new_tree);
             }
     }
 }

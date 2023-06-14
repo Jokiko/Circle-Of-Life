@@ -6,6 +6,7 @@ public class globelVarManeger : MonoBehaviour
 {
 
     public static Queue<Vector3> positionsTrees = new Queue<Vector3>();
+    public static Queue<GameObject> treeQueue = new Queue<GameObject>();
         
     // Start is called before the first frame update
     void Start()
@@ -16,8 +17,8 @@ public class globelVarManeger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (positionsTrees.Count == 0)
-            Debug.Log("peek empty  ");
+        //if (positionsTrees.Count == 0)
+           //Debug.Log("peek empty  ");
         //else
         //{
           //  Debug.Log("peek  :" + positionsTrees.Peek);
